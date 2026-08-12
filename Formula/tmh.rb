@@ -12,7 +12,7 @@
 class Tmh < Formula
   desc "Secure credential broker and agent-identity CLI (tmh, tmh-broker, mcp-agent)"
   homepage "https://github.com/thatsmyhuman/tmh-install"
-  version "0.1.0"
+  version "0.1.1"
 
   # macOS-only binary formula: the binaries are glibc-linked, so Linuxbrew is
   # unsupported. `depends_on :macos` refuses non-macOS installs; Linux users are
@@ -24,11 +24,11 @@ class Tmh < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.0/tmh_darwin_arm64.tar.gz"
-      sha256 "f15225e2c9953f62a6f5a93218a9038f98c84792be3da89e064668f5964ec7e4"
+      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.1/tmh_darwin_arm64.tar.gz"
+      sha256 "65db714e0661ae2fd86bace192379ac9541a792c9971b4a3ef8060a4bd2d7c6e"
     else
-      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.0/tmh_darwin_amd64.tar.gz"
-      sha256 "8d8b6005a4d05bd9e96bb25c297c73b12dbcad67b69cddae58ace2d061b76f67"
+      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.1/tmh_darwin_amd64.tar.gz"
+      sha256 "383558808562d9ce56186e9c81658d1c2cd41d7706fb484291203c95817ea8fd"
     end
   end
 
