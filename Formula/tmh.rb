@@ -1,10 +1,15 @@
 # Homebrew formula TEMPLATE for the thatsmyhuman CLI suite.
 #
-# This file is a TEMPLATE. The release workflow substitutes the {{TOKENS}} below
-# with the concrete version and per-arch URL/sha256 pairs, then commits the
-# rendered formula to the tap repo `thatsmyhuman/homebrew-tmh` as `Formula/tmh.rb`.
+# This file is a TEMPLATE. The release workflow substitutes the double-brace
+# placeholder tokens below with the concrete version and per-arch URL/sha256
+# pairs, then commits the rendered formula to the tap repo
+# `thatsmyhuman/homebrew-tmh` as `Formula/tmh.rb`.
 # Substituting the tokens yields syntactically valid Ruby (all string tokens are
 # already inside quotes), so `ruby -c` and `brew style` pass on the rendered file.
+#
+# Do NOT write a literal double-brace token anywhere in this prose: ci.yml's
+# formula-render job greps the RENDERED file for one and fails the build, so a
+# token that only ever appears in a comment reads as an unrendered placeholder.
 #
 # Tap layout means users run:  brew install thatsmyhuman/tmh/tmh
 #
@@ -12,7 +17,7 @@
 class Tmh < Formula
   desc "Secure credential broker and agent-identity CLI (tmh, tmh-broker, mcp-agent)"
   homepage "https://github.com/thatsmyhuman/tmh-install"
-  version "0.1.2"
+  version "0.1.3"
 
   # macOS-only binary formula: the binaries are glibc-linked, so Linuxbrew is
   # unsupported. `depends_on :macos` refuses non-macOS installs; Linux users are
@@ -24,11 +29,11 @@ class Tmh < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.2/tmh_darwin_arm64.tar.gz"
-      sha256 "e4e4a3b43cf90f03b3b57b81a53373c4d1acafba3ed29d6a4daa135c3571615f"
+      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.3/tmh_darwin_arm64.tar.gz"
+      sha256 "379ab00bd35fda623b603d23cdaa1f595004ae6e67709e57fa26f2bf198733f2"
     else
-      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.2/tmh_darwin_amd64.tar.gz"
-      sha256 "3af906b74e7f067589fe1c60df0c9bb16490f1ab5f5ed635a8b09b899c4692f2"
+      url "https://github.com/thatsmyhuman/tmh-install/releases/download/v0.1.3/tmh_darwin_amd64.tar.gz"
+      sha256 "eed03462ebb307e5f3deb0b64a477e5928bb960f6da170874a7cba6cf2d4940e"
     end
   end
 
